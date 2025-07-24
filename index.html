@@ -1,93 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oprex Web - Soluções Web Modernas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Oprex Web - Desenvolvimento de Soluções Digitais</title>
+  
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" type="image/png">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .whatsapp-btn {
-      animation: pulse 1.5s infinite;
+    /* Estilos personalizados */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0F172A; /* slate-900 */
     }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #1E3A8A 0%, #312E81 50%, #0F172A 100%);
+    }
+    
+    .whatsapp-btn {
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 20px rgba(22, 163, 74, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+      }
+    }
+    
+    .service-card:hover, .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(167, 139, 250, 0.1), 0 10px 10px -5px rgba(167, 139, 250, 0.08);
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Hero Section -->
-  <header class="bg-blue-600 text-white min-h-screen flex flex-col justify-center items-center text-center px-4">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Oprex Web</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
-      Desenvolvemos soluções web modernas, seguras e sob medida para o seu negócio.
-    </p>
-    <a href="https://wa.me/5532984545864" 
-       class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg"
-       target="_blank" data-aos="zoom-in" data-aos-delay="400">
-       Entre em contato
-    </a>
+<body class="text-slate-200">
+
+  <header class="hero-gradient min-h-screen flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-black/20 z-0"></div>
+    <div class="z-10">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg" data-aos="fade-down">
+            Oprex Web
+        </h1>
+        <p class="text-lg md:text-2xl mt-4 mb-8 max-w-3xl text-slate-300 drop-shadow-md" data-aos="fade-up" data-aos-delay="200">
+            Transformamos suas ideias em soluções digitais <span class="font-bold text-violet-400">modernas</span>, <span class="font-bold text-violet-400">rápidas</span> e <span class="font-bold text-violet-400">seguras</span>.
+        </p>
+        <a href="https://wa.me/5532984545864?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+           class="whatsapp-btn bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold shadow-2xl inline-flex items-center"
+           target="_blank" data-aos="zoom-in" data-aos-delay="400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V10a2 2 0 012-2h8z" />
+            </svg>
+            Solicite um Orçamento
+        </a>
+    </div>
+    <div class="absolute bottom-10 text-white" data-aos="fade-up" data-aos-delay="800">
+        <a href="#servicos">
+            <svg class="w-8 h-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+    </div>
   </header>
 
-  <!-- Sobre -->
-  <section class="py-20 bg-white" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6 text-blue-600">Quem Somos</h2>
-      <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-        A Oprex Web é especializada no desenvolvimento de sistemas, sites e plataformas web de alta performance.
-        Nosso foco é criar soluções modernas, responsivas e seguras, oferecendo tecnologia de ponta e um visual profissional.
-      </p>
-    </div>
-  </section>
-
-  <!-- Serviços -->
-  <section class="py-20 bg-gray-100" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12 text-blue-600">Nossos Serviços</h2>
+  <section id="servicos" class="py-20" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-2">Nossas <span class="text-violet-400">Especialidades</span></h2>
+      <p class="text-slate-400 mb-12">Focados em performance, design e resultados.</p>
+      
       <div class="grid gap-8 md:grid-cols-3">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
-          <span class="material-symbols-outlined text-blue-600 text-5xl mb-4">computer</span>
-          <h3 class="text-xl font-semibold mb-2">Sistemas Web</h3>
-          <p>Plataformas completas, seguras e escaláveis para atender às necessidades do seu negócio.</p>
+        <div class="service-card bg-slate-800 p-8 rounded-xl shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-violet-500/20 text-violet-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Sistemas Web</h3>
+          <p class="text-slate-400">Plataformas completas e escaláveis para otimizar a gestão e os processos do seu negócio.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
-          <span class="material-symbols-outlined text-blue-600 text-5xl mb-4">web</span>
-          <h3 class="text-xl font-semibold mb-2">Landing Pages</h3>
-          <p>Páginas otimizadas para conversão, design moderno e velocidade de carregamento.</p>
+        <div class="service-card bg-slate-800 p-8 rounded-xl shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-violet-500/20 text-violet-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Sites e Landing Pages</h3>
+          <p class="text-slate-400">Páginas com design moderno, otimizadas para conversão e com carregamento ultrarrápido.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
-          <span class="material-symbols-outlined text-blue-600 text-5xl mb-4">dashboard</span>
-          <h3 class="text-xl font-semibold mb-2">Painéis Administrativos</h3>
-          <p>Interfaces modernas, intuitivas e integradas aos sistemas para gestão eficiente.</p>
+        <div class="service-card bg-slate-800 p-8 rounded-xl shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-violet-500/20 text-violet-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Segurança e Performance</h3>
+          <p class="text-slate-400">Aplicações robustas com as melhores práticas de segurança, garantindo a proteção dos seus dados.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfólio (Mockup) -->
-  <section class="py-20 bg-white" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12 text-blue-600">Nosso Portfólio</h2>
-      <div class="grid gap-8 md:grid-cols-3">
-        <img src="https://via.placeholder.com/400x250" class="rounded-lg shadow" alt="Projeto 1" data-aos="zoom-in">
-        <img src="https://via.placeholder.com/400x250" class="rounded-lg shadow" alt="Projeto 2" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://via.placeholder.com/400x250" class="rounded-lg shadow" alt="Projeto 3" data-aos="zoom-in" data-aos-delay="200">
+  <section id="portfolio" class="py-20 bg-slate-950/50" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-2">Projetos em Destaque</h2>
+      <p class="text-slate-400 mb-12">Confira alguns dos trabalhos que desenvolvemos.</p>
+      
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="portfolio-card group relative rounded-lg overflow-hidden transition-all duration-300" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e28f81?q=80&w=1470&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Dashboard de Análise">
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="text-center p-4">
+                    <h3 class="text-xl font-bold text-white">Sistema de BI</h3>
+                    <p class="text-slate-300">Painel de análise de dados para empresa de logística.</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-card group relative rounded-lg overflow-hidden transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1470&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Plataforma de Colaboração">
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="text-center p-4">
+                    <h3 class="text-xl font-bold text-white">Plataforma de Cursos</h3>
+                    <p class="text-slate-300">Ambiente virtual de aprendizagem para startup de educação.</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-card group relative rounded-lg overflow-hidden transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1415&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Site de E-commerce">
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="text-center p-4">
+                    <h3 class="text-xl font-bold text-white">Site de E-commerce</h3>
+                    <p class="text-slate-300">Loja virtual para marca de roupas sustentáveis.</p>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer class="bg-blue-600 text-white py-6 text-center">
-    <p>&copy; <span id="year"></span> Oprex Web - Todos os direitos reservados</p>
+  <footer class="bg-slate-900 text-slate-400 py-8 text-center">
+    <p>&copy; <span id="year"></span> Oprex Web - Todos os direitos reservados.</p>
+    <p class="text-sm mt-2">Desenvolvido para transformar ideias em realidade.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    // Inicializa a biblioteca de animação
+    AOS.init({
+      duration: 800, // Duração da animação
+      once: true,    // Animar apenas uma vez
+    });
+
+    // Atualiza o ano no rodapé automaticamente
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
